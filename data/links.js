@@ -37,8 +37,8 @@ export default [
   },
   {
     id: 'lo-7',
-    name: 'Email',
-    url: 'https://adwords.google.com/intl/en_GB/home/',
+    name: 'Google Search',
+    url: 'https://google.co.uk',
     image: ',',
   },
 ];
