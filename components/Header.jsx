@@ -20,6 +20,7 @@ const HeaderStyles = styled.header`
 `;
 
 export default function Header() {
+  console.log(new Date().getFullYear());
   return (
     <HeaderStyles>
       <div className="container grid">
@@ -27,7 +28,7 @@ export default function Header() {
           src="https://rhinoukbootlinersltd.co.uk/ekmps/shops/rhinouk/resources/Design/tinywebsitelogo.png"
           alt="Rhino Uk"
         />
-        <h2>{format(new Date(), 'eeee Mo MMMM yyyy')}</h2>
+        <h2>{format(new Date(), 'eeee do MMMM yyyy')}</h2>
       </div>
     </HeaderStyles>
   );
