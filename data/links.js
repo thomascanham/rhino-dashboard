@@ -37,8 +37,14 @@ export default [
   },
   {
     id: 'lo-8',
-    name: 'Royal Mail Order Supplies',
-    url: 'https://google.co.uk',
+    name: 'Royal Mail (Order Supplies)',
+    url: 'https://shop.royalmail.com/online-mail-supplies',
+    image: ',',
+  },
+  {
+    id: 'lo-9',
+    name: 'Flyer Printing',
+    url: 'https://www.instantprint.co.uk/',
     image: ',',
   },
 ];
