@@ -36,8 +36,8 @@ export default [
     image: ',',
   },
   {
-    id: 'lo-7',
-    name: 'Google Search',
+    id: 'lo-8',
+    name: 'Royal Mail Order Supplies',
     url: 'https://google.co.uk',
     image: ',',
   },

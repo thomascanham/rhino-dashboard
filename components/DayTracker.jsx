@@ -58,6 +58,29 @@ const Card = styled.div`
     display: flex;
     justify-content: space-between;
   }
+
+  .line-item-flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .orb {
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  .orb-red {
+    background-color: #e74c3c;
+  }
+  .orb-yellow {
+    background-color: #e67e22;
+  }
+  .orb-green {
+    background-color: #2ecc71;
+  }
 `;
 
 function getNextMonday(date = new Date()) {
@@ -89,17 +112,27 @@ export default function DayTracker() {
 
       <div className="list-group">
         <li className="list-group-item flex-between">
-          <span>14 Days:</span>
+          <span className="line-item-flex">
+            {' '}
+            <span className="orb orb-red" />
+            14 Days:
+          </span>
           <span>{format(new Date(days.fourteen), 'do MMM')}</span>
         </li>
 
         <li className="list-group-item flex-between">
-          <span>12 Days:</span>
+          <span className="line-item-flex">
+            <span className="orb orb-yellow" />
+            12 Days:
+          </span>
           <span>{format(new Date(days.twelve), 'do MMM')}</span>
         </li>
 
         <li className="list-group-item flex-between">
-          <span>10 Days:</span>
+          <span className="line-item-flex">
+            <span className="orb orb-green" />
+            10 Days:
+          </span>
           <span>{format(new Date(days.ten), 'do MMM')}</span>
         </li>
       </div>

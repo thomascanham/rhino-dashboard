@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyling = createGlobalStyle`
     html {
-        --blue: #2196f3;
+        --blue: #01A0FB;
         --grey: rgba(0, 0, 0, 0.03);
         --gray: var(--grey);
 
@@ -17,15 +17,15 @@ const GlobalStyling = createGlobalStyle`
 
     html, body {
         font-size: 16px;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         line-height: 1.75;
-        color: #000000;
+        color: #2b2b2b;
     }
 
     
     h1, h2, h3, h4, h5 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     line-height: 1.3;
     }

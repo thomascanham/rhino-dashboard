@@ -2,6 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const NewLinkPill = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Montserrat', 'sans-serif';
+  outline: none;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+  padding: 30px 16px;
+  cursor: pointer;
+  color: var(--blue);
+  transition: 0.15s ease-in-out;
+  &:first-of-type {
+    margin-left: 0;
+  }
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: var(--bs);
+    background: var(--blue);
+    color: white;
+  }
+`;
+
 const LinkpillStyles = styled.a`
   margin: 30px;
   position: relative;
@@ -15,6 +40,7 @@ const LinkpillStyles = styled.a`
   border-radius: 22px;
   padding: 0 0 0 21px;
   line-height: 44px;
+  font-size: 16px;
   text-align: center;
   cursor: pointer;
   /* &:first-child {
@@ -87,10 +113,10 @@ const LinkpillStyles = styled.a`
 
 export default function Linkpill({ name, url }) {
   return (
-    <LinkpillStyles href={url} className="button--secondary" target="_blank">
+    <NewLinkPill href={url} className="button--secondary" target="_blank">
       <span className="text">{name}</span>
       <span className="icon-arrow" />
-    </LinkpillStyles>
+    </NewLinkPill>
   );
 }
 

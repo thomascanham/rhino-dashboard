@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { format } from 'date-fns';
+import Link from 'next/link';
 
 const HeaderStyles = styled.header`
   width: 100vw;
@@ -16,18 +17,20 @@ const HeaderStyles = styled.header`
   }
   img {
     width: 180px;
+    cursor: pointer;
   }
 `;
 
+const logoLink =
+  'https://files.ekmcdn.com/rhinouk/resources/design/tinywebsitelogo.png';
+
 export default function Header() {
-  console.log(new Date().getFullYear());
   return (
     <HeaderStyles>
       <div className="container grid">
-        <img
-          src="https://rhinoukbootlinersltd.co.uk/ekmps/shops/rhinouk/resources/Design/tinywebsitelogo.png"
-          alt="Rhino Uk"
-        />
+        <Link href="/">
+          <img src={logoLink} alt="Rhino Uk" />
+        </Link>
         <h2>{format(new Date(), 'eeee do MMMM yyyy')}</h2>
       </div>
     </HeaderStyles>
