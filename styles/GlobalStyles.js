@@ -45,6 +45,14 @@ const GlobalStyling = createGlobalStyle`
 
     small, .text_small {font-size: 0.8rem;}
 
+    button {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        font-family: 'Montserrat', sans-serif;
+    }
+
     .container {
         width: 95%;
         max-width: 1140px;

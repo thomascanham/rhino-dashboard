@@ -1,15 +1,24 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { IoIosHome, IoIosCalculator } from 'react-icons/io';
 
 export default function Nav() {
   return (
     <NavStyles>
       <div className="container">
         <NavStyles>
-          <Link href="/">Dashboard</Link>
-          <Link href="/pricelist">Price List</Link>
-          <Link href="/grid">Buyers Guide</Link>
-          <Link href="/tools/average">Average Calculator</Link>
+          <Link href="/">
+            <span>
+              <IoIosHome />
+              Home
+            </span>
+          </Link>
+          <Link href="/tools/average">
+            <span>
+              <IoIosCalculator />
+              Average Calculator
+            </span>
+          </Link>
         </NavStyles>
       </div>
     </NavStyles>
@@ -21,11 +30,22 @@ const NavStyles = styled.nav`
   background: white;
   border-bottom: 1px solid #ecf0f1;
   transition: all ease-in-out 0.03s;
-  a {
-    padding: 16px 14px;
+  svg {
+    height: 14px;
+    margin-right: 5px;
+  }
+  a,
+  span {
+    padding: 14px 16px;
     display: inline-block;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
     &:hover {
-      background-color: #ecf0f1;
+      color: var(--blue);
+    }
+    &:first-of-type {
+      padding-left: 0;
     }
   }
 `;
