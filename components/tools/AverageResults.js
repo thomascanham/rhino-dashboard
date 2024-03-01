@@ -15,10 +15,16 @@ export default function AverageResults({ average, total, amount }) {
   return (
     <AverageStyles className={classes}>
       <p>
-        Average: <span className="average">{Math.floor(average)}</span>
+        Average:{' '}
+        <span className="average">
+          {Math.floor(average)} {average === 0 ? '' : 'g'}
+        </span>
       </p>
       <p>
-        Total: <span>{total}</span>
+        Total:{' '}
+        <span>
+          {total} {total === 0 ? '' : 'g'}
+        </span>
       </p>
       <p>
         Parcels: <span>{amount}</span>
@@ -55,15 +61,9 @@ const AverageStyles = styled.div`
   &.red {
     border: 3px solid var(--red2);
     background-color: var(--redBackground);
-    .average {
-      color: var(--red2);
-    }
   }
   &.green {
     border: 3px solid var(--green2);
     background-color: var(--greenBackground);
-    .average {
-      color: var(--green2);
-    }
   }
 `;
