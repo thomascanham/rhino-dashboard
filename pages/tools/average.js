@@ -1,9 +1,15 @@
+/* eslint-disable jsx-a11y/no-autofocus */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 // TO DO:
 // Save the current weights into local storage so you can come off the page and back
 // If we do that we need a clear button that can clear it
 
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
+import { IoTrashBin } from 'react-icons/io5';
 import generateRandomId from '../../lib/generateRandomId';
 import AverageResults from '../../components/tools/AverageResults';
 
@@ -14,6 +20,12 @@ const Wrapper = styled.div`
     font-size: 32px;
     line-height: 48px;
     margin-bottom: 30px;
+  }
+  .more-info {
+    font-size: 12px;
+    color: #2b2b2b;
+    opacity: 75%;
+    padding-top: 10px;
   }
 `;
 
@@ -33,6 +45,23 @@ const Grid = styled.div`
       background-color: var(--blue);
       color: white;
     }
+  }
+  li {
+    max-width: 50px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    &::marker {
+      transition: 0.2s;
+    }
+    &:hover {
+      padding-left: 6px;
+    }
+  }
+  li:hover::marker {
+    color: red;
+    content: 'X';
+    font-weight: 700;
+    font-size: 14px;
   }
 `;
 
@@ -96,6 +125,14 @@ export default function AveragePage() {
     localStorage.setItem('weights', JSON.stringify(tempState));
   }
 
+  async function removeInputFromInputs(event) {
+    const id = event.currentTarget.dataset.key;
+    const newArr = inputs.filter((item) => item.id !== id);
+    await setInputs(newArr);
+
+    localStorage.setItem('weights', JSON.stringify(newArr));
+  }
+
   function clearInputs() {
     setInputs([]);
     localStorage.removeItem('weights');
@@ -134,12 +171,23 @@ export default function AveragePage() {
 
   return (
     <Wrapper className="container">
+      <Head>
+        <title>RUBL - Average Calculator</title>
+      </Head>
       <Grid>
         <div>
           {inputs.length ? (
-            inputs.map((item) => <li key={item.id}>{item.weight}</li>)
+            inputs.map((item) => (
+              <li
+                onClick={removeInputFromInputs}
+                key={item.id}
+                data-key={item.id}
+              >
+                {item.weight}
+              </li>
+            ))
           ) : (
-            <p>No weights entered</p>
+            <p>No Weights entered</p>
           )}
         </div>
 
@@ -154,6 +202,7 @@ export default function AveragePage() {
                 id="weight"
                 placeholder="1234"
                 required
+                autoFocus="true"
               />
             </label>
             <button type="submit">Add Weight</button>
@@ -172,6 +221,11 @@ export default function AveragePage() {
           >
             Clear Weights
           </button>
+
+          <p className="more-info">
+            ( You can leave this page and come back and the weights will stay )
+          </p>
+          <p className="more-info">( Hover over a weight to delete it )</p>
         </div>
       </Grid>
     </Wrapper>
