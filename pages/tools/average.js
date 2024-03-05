@@ -11,6 +11,8 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import generateRandomId from '../../lib/generateRandomId';
 import AverageResults from '../../components/tools/AverageResults';
+import formatNumber from '../../lib/formatNumber';
+import SEO from '../../components/SEO';
 
 const Wrapper = styled.div`
   padding-top: 30px;
@@ -170,9 +172,7 @@ export default function AveragePage() {
 
   return (
     <Wrapper className="container">
-      <Head>
-        <title>RUBL - Average Calculator</title>
-      </Head>
+      <SEO title="Average Calculator" />
       <Grid>
         <div>
           {inputs.length ? (
@@ -182,7 +182,7 @@ export default function AveragePage() {
                 key={item.id}
                 data-key={item.id}
               >
-                {item.weight}
+                {formatNumber(item.weight)}
               </li>
             ))
           ) : (

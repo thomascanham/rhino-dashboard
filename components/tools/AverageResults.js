@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import formatNumber from '../../lib/formatNumber';
 
 export default function AverageResults({ average, total, amount }) {
   let classes = '';
@@ -17,13 +18,13 @@ export default function AverageResults({ average, total, amount }) {
       <p>
         Average:{' '}
         <span className="average">
-          {Math.floor(average)} {average === 0 ? '' : 'g'}
+          {formatNumber(Math.floor(average))} {average === 0 ? '' : 'g'}
         </span>
       </p>
       <p>
         Total:{' '}
         <span>
-          {total} {total === 0 ? '' : 'g'}
+          {formatNumber(total)} {total === 0 ? '' : 'g'}
         </span>
       </p>
       <p>

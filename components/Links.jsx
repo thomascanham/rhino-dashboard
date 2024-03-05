@@ -12,7 +12,6 @@ const LinksStyled = styled.section`
 `;
 
 export default function Links() {
-  console.log(links);
   return (
     <LinksStyled>
       <div className="container grid">

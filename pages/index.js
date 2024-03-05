@@ -1,13 +1,11 @@
-import Head from 'next/head';
 import DayTracker from '../components/DayTracker';
 import Links from '../components/Links';
+import SEO from '../components/SEO';
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Rhino UK Bootliners</title>
-      </Head>
+      <SEO title="RUBL - Dashboard" />
       <section>
         <div className="container">
           <DayTracker />
