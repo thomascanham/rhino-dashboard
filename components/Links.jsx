@@ -12,11 +12,17 @@ const LinksStyled = styled.section`
 `;
 
 export default function Links() {
+  console.log(links);
   return (
     <LinksStyled>
       <div className="container grid">
         {links.map((link) => (
-          <Linkpill key={link.id} name={link.name} url={link.url} />
+          <Linkpill
+            key={link.id}
+            name={link.name}
+            url={link.url}
+            Icon={link.Icon}
+          />
         ))}
       </div>
     </LinksStyled>

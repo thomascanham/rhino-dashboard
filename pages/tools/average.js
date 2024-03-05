@@ -9,7 +9,6 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import { IoTrashBin } from 'react-icons/io5';
 import generateRandomId from '../../lib/generateRandomId';
 import AverageResults from '../../components/tools/AverageResults';
 

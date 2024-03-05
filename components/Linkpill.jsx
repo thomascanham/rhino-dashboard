@@ -22,13 +22,17 @@ const LinkPillStyles = styled.a`
     background: var(--blue);
     color: white;
   }
+  svg {
+    margin-right: 10px;
+    font-size: 18px;
+  }
 `;
 
-export default function Linkpill({ name, url }) {
+export default function Linkpill({ name, url, Icon }) {
   return (
     <LinkPillStyles href={url} className="button--secondary" target="_blank">
+      <Icon />
       <span className="text">{name}</span>
-      <span className="icon-arrow" />
     </LinkPillStyles>
   );
 }
@@ -36,4 +40,5 @@ export default function Linkpill({ name, url }) {
 Linkpill.propTypes = {
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  Icon: PropTypes.func,
 };

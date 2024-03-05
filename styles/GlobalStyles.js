@@ -54,8 +54,8 @@ const GlobalStyling = createGlobalStyle`
     }
 
     .container {
-        width: 95%;
-        max-width: 1140px;
+        width: 98%;
+        max-width: 1250px;
         margin: 0 auto;
     }
 
