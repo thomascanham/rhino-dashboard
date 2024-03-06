@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 export default function Home() {
   return (
     <>
-      <SEO title="RUBL - Dashboard" />
+      <SEO title="Dashboard" />
       <section>
         <div className="container">
           <DayTracker />

@@ -93,6 +93,10 @@ const Form = styled.form`
     padding: 10px;
     margin-top: 15px;
     cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   /* Chrome, Safari, Edge, Opera */
